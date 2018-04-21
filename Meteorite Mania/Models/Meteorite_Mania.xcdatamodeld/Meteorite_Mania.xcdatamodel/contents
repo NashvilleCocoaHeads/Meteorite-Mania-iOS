@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Meteorite" representedClassName="Meteorite" syncable="YES" codeGenerationType="class">
+        <attribute name="fall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geoLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="massInGrams" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nasaID" optional="YES" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="recClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recLat" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="recLong" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Meteorite" positionX="-63" positionY="-18" width="128" height="195"/>
+    </elements>
+</model>
