@@ -39,7 +39,7 @@ public class MeteoritesCoreDataStore {
             let recClass = meteoriteRowStrings.count > 3 ? meteoriteRowStrings[3] : nil
             let massInGrams = meteoriteRowStrings.count > 4 ? Double(meteoriteRowStrings[4]) : nil
             let fall = meteoriteRowStrings.count > 5 ? meteoriteRowStrings[5] : nil
-            let year = meteoriteRowStrings.count > 6 ? csvDateFormatter().date(from: meteoriteRowStrings[6]) : nil
+            let year = meteoriteRowStrings.count > 6 ? csvDateFormatter.date(from: meteoriteRowStrings[6]) : nil
             let recLat = meteoriteRowStrings.count > 7 ? Double(meteoriteRowStrings[7]) : nil
             let recLong = meteoriteRowStrings.count > 8 ? Double(meteoriteRowStrings[8]) : nil
             let geoLocation = meteoriteRowStrings.count > 10 ? meteoriteRowStrings[9] + "," + meteoriteRowStrings[10] : nil
@@ -59,12 +59,12 @@ public class MeteoritesCoreDataStore {
         saveContext()
     }
     
-    class func csvDateFormatter() -> DateFormatter {
+    static let csvDateFormatter: DateFormatter = {
         
         let csvDateFormatter = DateFormatter()
         csvDateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss a"
         return csvDateFormatter
-    }
+    }()
     
     class func deleteAllMeteorites() {
         
