@@ -26,6 +26,7 @@
 		1EBBC732208C3C760007B90E /* Meteorite_Landings_First_1000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */; };
 		1EBBC733208C3C760007B90E /* Meteorite_Landings_First_1000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */; };
 		1EBBC734208C3C760007B90E /* Meteorite_Landings_First_1000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */; };
+		1EBBC737208C5F2E0007B90E /* MeteoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBBC736208C5F2E0007B90E /* MeteoriteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		1E2BDE2620884913007836B4 /* Meteorite_ManiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite_ManiaUITests.swift; sourceTree = "<group>"; };
 		1E2BDE2820884913007836B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Meteorite_Landings_First_1000.csv; sourceTree = "<group>"; };
+		1EBBC736208C5F2E0007B90E /* MeteoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		1E2BDE0220884910007836B4 /* Meteorite Mania */ = {
 			isa = PBXGroup;
 			children = (
+				1EBBC735208C5F150007B90E /* Views */,
 				1E0EEF1E208BBE0F00A38814 /* Utilities */,
 				1E0EEF1D208BBDFD00A38814 /* Models */,
 				1E0EEF13208BB46700A38814 /* Controllers */,
@@ -175,6 +178,14 @@
 				1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		1EBBC735208C5F150007B90E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EBBC736208C5F2E0007B90E /* MeteoriteTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				1E2BDE0620884910007836B4 /* MeteoriteListViewController.swift in Sources */,
 				1E0EEF20208BBE8700A38814 /* MeteoritesCoreDataStore.swift in Sources */,
 				1E2BDE0C20884910007836B4 /* Meteorite_Mania.xcdatamodeld in Sources */,
+				1EBBC737208C5F2E0007B90E /* MeteoriteTableViewCell.swift in Sources */,
 				1E2BDE0420884910007836B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,6 +57,20 @@ public class MeteoritesCoreDataStore {
         }
         
         saveContext()
+        NotificationCenter.default.post(name: .DataUpdated, object: nil)
+    }
+    
+    class func fetchAllMeteoritesByYearDescending() -> [Meteorite]? {
+        
+        let fetchRequest = NSFetchRequest<Meteorite>(entityName: "Meteorite")
+        let sortDescriptorByYear = NSSortDescriptor(key: #keyPath(Meteorite.year), ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptorByYear]
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch {
+            print("Cannot fetch Meteorites")
+            return nil
+        }
     }
     
     static let csvDateFormatter: DateFormatter = {
@@ -68,7 +82,10 @@ public class MeteoritesCoreDataStore {
     
     class func deleteAllMeteorites() {
         
-        
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Meteorite")
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        try! persistentContainer.viewContext.execute(request)
+        saveContext()
     }
     
     class func createNewMeteorite(name: String?,
@@ -141,4 +158,8 @@ public class MeteoritesCoreDataStore {
             }
         }
     }
+}
+
+extension Notification.Name {
+    public static let DataUpdated = Notification.Name.init("DataUpdated")
 }

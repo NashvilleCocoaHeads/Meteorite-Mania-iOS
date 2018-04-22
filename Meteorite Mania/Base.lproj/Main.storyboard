@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="1385" y="-384"/>
         </scene>
-        <!--Meteorite List View Controller-->
+        <!--Meteorites-->
         <scene sceneID="cJF-q7-eDJ">
             <objects>
                 <viewController id="TpC-qM-wes" customClass="MeteoriteListViewController" customModule="Meteorite_Mania" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,21 +57,65 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="ovz-UH-4JF">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="74"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeteoriteTableViewCell" rowHeight="87" id="ovz-UH-4JF" customClass="MeteoriteTableViewCell" customModule="Meteorite_Mania" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ovz-UH-4JF" id="j4t-ud-Vwi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-vH-20t">
-                                                    <rect key="frame" x="251" y="0.0" width="124" height="74"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-vH-20t">
+                                                    <rect key="frame" x="246" y="0.0" width="129" height="87"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Acz-vH-20t" secondAttribute="height" multiplier="43:29" id="9bg-aY-QFj"/>
+                                                    </constraints>
                                                 </mapView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mjN-m0-H5I">
+                                                    <rect key="frame" x="15" y="11" width="221" height="65"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aachen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jx-za-LO5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found in 1980" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-yX-5bb">
+                                                            <rect key="frame" x="0.0" y="26.5" width="98" height="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2095g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPi-2E-yn7">
+                                                            <rect key="frame" x="0.0" y="50.5" width="37.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mjN-m0-H5I" firstAttribute="top" secondItem="j4t-ud-Vwi" secondAttribute="topMargin" id="3zR-p2-AdK"/>
+                                                <constraint firstItem="Acz-vH-20t" firstAttribute="top" secondItem="j4t-ud-Vwi" secondAttribute="top" id="4tT-Gx-PWk"/>
+                                                <constraint firstAttribute="trailing" secondItem="Acz-vH-20t" secondAttribute="trailing" id="6f6-uL-njM"/>
+                                                <constraint firstItem="Acz-vH-20t" firstAttribute="leading" secondItem="mjN-m0-H5I" secondAttribute="trailing" constant="10" id="DOU-Zi-bc8"/>
+                                                <constraint firstItem="mjN-m0-H5I" firstAttribute="bottom" secondItem="j4t-ud-Vwi" secondAttribute="bottomMargin" id="Qg0-hu-pXG"/>
+                                                <constraint firstItem="mjN-m0-H5I" firstAttribute="leading" secondItem="j4t-ud-Vwi" secondAttribute="leadingMargin" id="YdI-Vx-B3g"/>
+                                                <constraint firstAttribute="bottom" secondItem="Acz-vH-20t" secondAttribute="bottom" id="lfa-di-EL4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="discoveryLabel" destination="NT8-yX-5bb" id="1O4-yA-mdM"/>
+                                            <outlet property="mapView" destination="Acz-vH-20t" id="LYj-pE-lLs"/>
+                                            <outlet property="massLabel" destination="UPi-2E-yn7" id="riL-ma-AEx"/>
+                                            <outlet property="nameLabel" destination="5jx-za-LO5" id="w1b-kU-O9v"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TpC-qM-wes" id="fSH-jF-xf9"/>
+                                    <outlet property="delegate" destination="TpC-qM-wes" id="UnE-4Z-ES1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,7 +127,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pIC-yD-rJ2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VPT-3G-VxN"/>
+                    <navigationItem key="navigationItem" title="Meteorites" id="VPT-3G-VxN"/>
+                    <connections>
+                        <outlet property="tableView" destination="B1r-Lq-Wyv" id="2hc-Wg-szx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5z4-Vd-XGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
