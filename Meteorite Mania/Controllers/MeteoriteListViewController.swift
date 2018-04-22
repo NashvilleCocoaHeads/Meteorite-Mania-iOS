@@ -20,6 +20,7 @@ class MeteoriteListViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: .DataUpdated, object: nil)
+        updateData()
     }
     
     @objc func updateData() {

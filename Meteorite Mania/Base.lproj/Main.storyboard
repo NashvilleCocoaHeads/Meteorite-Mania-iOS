@@ -12,22 +12,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
-        <scene sceneID="UBf-H5-Wl6">
-            <objects>
-                <viewController id="SID-Z5-Jco" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gV1-kS-PBp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jca-4q-znw"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="qDE-3C-mpR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sjL-gV-sHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1385" y="288"/>
-        </scene>
         <!--List-->
         <scene sceneID="H22-MO-oAY">
             <objects>
@@ -44,6 +28,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ber-S5-Lx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1385" y="-384"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="1Yd-ti-sbr">
+            <objects>
+                <navigationController id="6WI-BB-WgH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="fPk-2j-FLw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oGH-1t-7CF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PNh-XZ-lGz" kind="relationship" relationship="rootViewController" id="v6f-6Z-ggV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2b-DE-hI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1385" y="282"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="QVV-ys-fRu">
+            <objects>
+                <viewController title="Map" id="PNh-XZ-lGz" customClass="MeteoriteMapViewController" customModule="Meteorite_Mania" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cOm-h8-QLD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LzH-0L-UXI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8nG-D0-Ewe" firstAttribute="bottom" secondItem="LzH-0L-UXI" secondAttribute="bottom" id="0hY-GN-OD2"/>
+                            <constraint firstItem="LzH-0L-UXI" firstAttribute="top" secondItem="8nG-D0-Ewe" secondAttribute="top" id="fi6-TO-V6X"/>
+                            <constraint firstItem="8nG-D0-Ewe" firstAttribute="trailing" secondItem="LzH-0L-UXI" secondAttribute="trailing" id="xFC-3c-Ayp"/>
+                            <constraint firstItem="LzH-0L-UXI" firstAttribute="leading" secondItem="8nG-D0-Ewe" secondAttribute="leading" id="yNZ-BK-sWc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8nG-D0-Ewe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="hwr-cH-4uE"/>
+                    <connections>
+                        <outlet property="mapView" destination="LzH-0L-UXI" id="wu1-8A-OLE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOA-7d-7Mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="281"/>
         </scene>
         <!--Meteorites-->
         <scene sceneID="cJF-q7-eDJ">
@@ -147,7 +178,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="l1i-lh-AtS" kind="relationship" relationship="viewControllers" id="CgA-bp-8cf"/>
-                        <segue destination="SID-Z5-Jco" kind="relationship" relationship="viewControllers" id="B85-kH-4rN"/>
+                        <segue destination="6WI-BB-WgH" kind="relationship" relationship="viewControllers" id="N0H-v0-0Nq"/>
                         <segue destination="6Qq-zn-Jed" kind="relationship" relationship="viewControllers" id="hZt-A6-9uz"/>
                         <segue destination="L4a-0H-eSG" kind="relationship" relationship="viewControllers" id="UaD-EJ-2Ie"/>
                     </connections>
