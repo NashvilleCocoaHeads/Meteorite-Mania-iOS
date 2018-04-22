@@ -29,9 +29,9 @@ public class MeteoritesCoreDataStore {
             result.append(columns)
         }
         
+        result.remove(at: 0)
+        
         result.forEach { (meteoriteRowStrings) in
-            
-            if result.index(of: meteoriteRowStrings) == 0 { return }
             
             let name = meteoriteRowStrings.count > 0 ? meteoriteRowStrings[0] : nil
             let nasaID = meteoriteRowStrings.count > 1 ? Int32(meteoriteRowStrings[1]) : nil
