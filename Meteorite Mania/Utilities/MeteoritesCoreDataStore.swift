@@ -11,10 +11,10 @@ import CoreData
 
 public class MeteoritesCoreDataStore {
     
-    class func importNASAMeteoritesCSV() {
+    class func importNASAMeteoritesCSV(csvFileName: String) {
         
         var contents: String?
-        guard let filepath = Bundle.main.path(forResource: "Meteorite_Landings", ofType: "csv") else { return }
+        guard let filepath = Bundle.main.path(forResource: csvFileName, ofType: "csv") else { return }
         do {
             contents = try String(contentsOfFile: filepath, encoding: .utf8)
         } catch {

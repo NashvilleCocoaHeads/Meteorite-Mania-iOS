@@ -26,10 +26,10 @@ class Meteorite_ManiaTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
+    func testImportNASAMeteoritesCSVPerformance() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            MeteoritesCoreDataStore.importNASAMeteoritesCSV(csvFileName: "Meteorite_Landings_First_1000")
         }
     }
     
