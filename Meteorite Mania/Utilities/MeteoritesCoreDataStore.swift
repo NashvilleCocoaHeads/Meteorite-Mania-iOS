@@ -54,9 +54,9 @@ public class MeteoritesCoreDataStore {
                                recLat: recLat,
                                recLong: recLong,
                                geoLocation: geoLocation)
-            
-            saveContext()
         }
+        
+        saveContext()
     }
     
     class func csvDateFormatter() -> DateFormatter {
