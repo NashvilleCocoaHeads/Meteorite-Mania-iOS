@@ -27,7 +27,7 @@ class MeteoriteMapViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func updateData() {
         
-        DispatchQueue.main.async {
+        DispatchQueue(label: "MeteoriteMapViewController.UpdateMapImageQueue").async {
         
             if let meteorites = MeteoritesCoreDataStore.fetchAllMeteoritesByYearDescending() {
                 
@@ -35,7 +35,9 @@ class MeteoriteMapViewController: UIViewController, UIScrollViewDelegate {
                 
                 mapImage = self.addAnnotationToImage(image: mapImage, meteorites: meteorites)
                 
-                self.mapImageView.image = mapImage
+                DispatchQueue.main.async {
+                    self.mapImageView.image = mapImage
+                }
             }
         }
     }
