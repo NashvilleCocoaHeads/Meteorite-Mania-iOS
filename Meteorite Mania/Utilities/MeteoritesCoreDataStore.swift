@@ -76,7 +76,7 @@ public class MeteoritesCoreDataStore {
     static let csvDateFormatter: DateFormatter = {
         
         let csvDateFormatter = DateFormatter()
-        csvDateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss a"
+        csvDateFormatter.dateFormat = "MM/dd/yyyy"
         return csvDateFormatter
     }()
     
