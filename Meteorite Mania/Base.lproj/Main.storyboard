@@ -54,27 +54,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LzH-0L-UXI">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdN-E1-idz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                            </mapView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="land_shallow_topo_8192" translatesAutoresizingMaskIntoConstraints="NO" id="YF8-eZ-h6c">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YF8-eZ-h6c" firstAttribute="leading" secondItem="jdN-E1-idz" secondAttribute="leading" id="2i4-cC-FJb"/>
+                                    <constraint firstAttribute="trailing" secondItem="YF8-eZ-h6c" secondAttribute="trailing" id="4ar-dd-B7G"/>
+                                    <constraint firstItem="YF8-eZ-h6c" firstAttribute="centerY" secondItem="jdN-E1-idz" secondAttribute="centerY" id="QYm-II-InS"/>
+                                    <constraint firstAttribute="bottom" secondItem="YF8-eZ-h6c" secondAttribute="bottom" id="kHR-1n-flq"/>
+                                    <constraint firstItem="YF8-eZ-h6c" firstAttribute="top" secondItem="jdN-E1-idz" secondAttribute="top" id="nX1-HB-3qE"/>
+                                    <constraint firstItem="YF8-eZ-h6c" firstAttribute="centerX" secondItem="jdN-E1-idz" secondAttribute="centerX" id="sAs-BT-HyM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="PNh-XZ-lGz" id="nQY-tm-0S1"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8nG-D0-Ewe" firstAttribute="bottom" secondItem="LzH-0L-UXI" secondAttribute="bottom" id="0hY-GN-OD2"/>
-                            <constraint firstItem="LzH-0L-UXI" firstAttribute="top" secondItem="8nG-D0-Ewe" secondAttribute="top" id="fi6-TO-V6X"/>
-                            <constraint firstItem="8nG-D0-Ewe" firstAttribute="trailing" secondItem="LzH-0L-UXI" secondAttribute="trailing" id="xFC-3c-Ayp"/>
-                            <constraint firstItem="LzH-0L-UXI" firstAttribute="leading" secondItem="8nG-D0-Ewe" secondAttribute="leading" id="yNZ-BK-sWc"/>
+                            <constraint firstItem="jdN-E1-idz" firstAttribute="leading" secondItem="8nG-D0-Ewe" secondAttribute="leading" id="J0E-d3-43C"/>
+                            <constraint firstItem="8nG-D0-Ewe" firstAttribute="trailing" secondItem="jdN-E1-idz" secondAttribute="trailing" id="lqI-tQ-hXV"/>
+                            <constraint firstItem="jdN-E1-idz" firstAttribute="top" secondItem="8nG-D0-Ewe" secondAttribute="top" id="ven-q6-8AN"/>
+                            <constraint firstItem="8nG-D0-Ewe" firstAttribute="bottom" secondItem="jdN-E1-idz" secondAttribute="bottom" id="x3o-Bb-P9r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8nG-D0-Ewe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="hwr-cH-4uE"/>
                     <connections>
-                        <outlet property="mapView" destination="LzH-0L-UXI" id="wu1-8A-OLE"/>
+                        <outlet property="mapImageView" destination="YF8-eZ-h6c" id="YPh-Gq-pJf"/>
+                        <outlet property="scrollView" destination="jdN-E1-idz" id="Bum-Pw-7h0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOA-7d-7Mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2406" y="281"/>
+            <point key="canvasLocation" x="2405.5999999999999" y="280.20989505247377"/>
         </scene>
         <!--Meteorites-->
         <scene sceneID="cJF-q7-eDJ">
@@ -220,4 +237,7 @@
             <point key="canvasLocation" x="1385" y="1625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="land_shallow_topo_8192" width="8192" height="4096"/>
+    </resources>
 </document>
