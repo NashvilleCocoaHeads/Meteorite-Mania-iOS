@@ -19,7 +19,7 @@ class MeteoriteMapViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 10.0
+        scrollView.maximumZoomScale = 20.0
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: .DataUpdated, object: nil)
         updateData()
@@ -29,17 +29,14 @@ class MeteoriteMapViewController: UIViewController, UIScrollViewDelegate {
         
         DispatchQueue.main.async {
         
-            let meteorites = MeteoritesCoreDataStore.fetchAllMeteoritesByYearDescending()
-            
-            var mapImage = UIImage(named: "land_shallow_topo_8192")!
-            
-            meteorites?.forEach({ (meteorite) in
-                mapImage = self.addAnnotationToImage(image: mapImage,
-                                                     coordinate: CLLocationCoordinate2D(latitude: meteorite.recLat,
-                                                                                        longitude: meteorite.recLong))
-            })
-            
-            self.mapImageView.image = mapImage
+            if let meteorites = MeteoritesCoreDataStore.fetchAllMeteoritesByYearDescending() {
+                
+                var mapImage = UIImage(named: "land_shallow_topo_8192")!
+                
+                mapImage = self.addAnnotationToImage(image: mapImage, meteorites: meteorites)
+                
+                self.mapImageView.image = mapImage
+            }
         }
     }
     
@@ -47,7 +44,7 @@ class MeteoriteMapViewController: UIViewController, UIScrollViewDelegate {
         return mapImageView
     }
     
-    func addAnnotationToImage(image: UIImage, coordinate: CLLocationCoordinate2D) -> UIImage {
+    func addAnnotationToImage(image: UIImage, meteorites: [Meteorite]) -> UIImage {
         
         UIGraphicsBeginImageContext(image.size)
         image.draw(at: CGPoint.zero)
@@ -55,11 +52,14 @@ class MeteoriteMapViewController: UIViewController, UIScrollViewDelegate {
         let context = UIGraphicsGetCurrentContext()!
         context.setFillColor(UIColor.red.cgColor)
         
-        let coordinatePoint = CGPoint(x: (CGFloat(coordinate.longitude) + 180.0) / 360.0 * image.size.width,
-                                      y: (-CGFloat(coordinate.latitude) + 90.0) / 180.0 * image.size.height)
-        
-        let path = UIBezierPath(arcCenter: coordinatePoint, radius: 10.0, startAngle: 0.0, endAngle: 2.0 * CGFloat.pi, clockwise: false)
-        path.fill()
+        for meteorite in meteorites {
+            
+            let coordinatePoint = CGPoint(x: (CGFloat(meteorite.recLong) + 180.0) / 360.0 * image.size.width,
+                                          y: (-CGFloat(meteorite.recLat) + 90.0) / 180.0 * image.size.height)
+            
+            let path = UIBezierPath(arcCenter: coordinatePoint, radius: 10.0, startAngle: 0.0, endAngle: 2.0 * CGFloat.pi, clockwise: false)
+            path.fill()
+        }
         
         let imageWithAnnotationAdded = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
