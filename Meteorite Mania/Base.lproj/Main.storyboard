@@ -207,15 +207,67 @@
         <!--Graphs-->
         <scene sceneID="DOk-ei-fpd">
             <objects>
-                <viewController id="6Qq-zn-Jed" sceneMemberID="viewController">
+                <viewController id="6Qq-zn-Jed" customClass="MeteoriteGraphsViewController" customModule="Meteorite_Mania" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yY-8x-3Vg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-mk-Icn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zI4-qA-Hhr">
+                                    <size key="itemSize" width="50" height="210"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="14" minY="14" maxX="14" maxY="14"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GraphCollectionViewCell" id="CYj-nD-ZZ1" customClass="GraphCollectionViewCell" customModule="Meteorite_Mania" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="14" width="347" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="347" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Wg-chY" customClass="GradientLineGraphView" customModule="Meteorite_Mania" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="331" height="194"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.047058823529411764" green="0.058823529411764705" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="xsL-Wg-chY" secondAttribute="bottom" id="4sZ-Hv-eUB"/>
+                                            <constraint firstItem="xsL-Wg-chY" firstAttribute="top" secondItem="CYj-nD-ZZ1" secondAttribute="topMargin" id="5Ea-rh-VnO"/>
+                                            <constraint firstItem="xsL-Wg-chY" firstAttribute="leading" secondItem="CYj-nD-ZZ1" secondAttribute="leadingMargin" id="RJu-iS-2SP"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="xsL-Wg-chY" secondAttribute="trailing" id="xwC-79-ZS8"/>
+                                        </constraints>
+                                        <size key="customSize" width="347" height="210"/>
+                                        <connections>
+                                            <outlet property="gradientLineGraphView" destination="xsL-Wg-chY" id="nJp-Bc-8AG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Qq-zn-Jed" id="Ut1-RW-A1T"/>
+                                    <outlet property="delegate" destination="6Qq-zn-Jed" id="bxQ-h7-oHy"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Zm-7Z-rY2" firstAttribute="bottom" secondItem="nJr-mk-Icn" secondAttribute="bottom" id="LCf-ao-yee"/>
+                            <constraint firstItem="8Zm-7Z-rY2" firstAttribute="trailing" secondItem="nJr-mk-Icn" secondAttribute="trailing" id="V7k-45-dFf"/>
+                            <constraint firstItem="nJr-mk-Icn" firstAttribute="leading" secondItem="8Zm-7Z-rY2" secondAttribute="leading" id="ntB-PN-iVu"/>
+                            <constraint firstItem="nJr-mk-Icn" firstAttribute="top" secondItem="8Zm-7Z-rY2" secondAttribute="top" id="tbP-mp-r76"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Zm-7Z-rY2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graphs" image="GraphsTabIcon" selectedImage="GraphsTabIconSelected" id="a02-M9-cuA"/>
                     <navigationItem key="navigationItem" title="Graphs" id="XjL-yI-oh3"/>
+                    <connections>
+                        <outlet property="graphsCollectionView" destination="nJr-mk-Icn" id="hep-yR-5vQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiS-zj-ol6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -691,7 +743,7 @@ All other source code for this app is licensed under the MIT License.
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 MIT License
 
@@ -701,7 +753,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="12" name="Helvetica"/>

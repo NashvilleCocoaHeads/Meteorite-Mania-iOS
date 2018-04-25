@@ -18,11 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupAppearance()
         
-        DispatchQueue(label: "ImportQueue").async {
-            MeteoritesCoreDataStore.deleteAllMeteorites()
-            MeteoritesCoreDataStore.importNASAMeteoritesCSV(csvFileName: "Meteorite_Landings")
-        }
-        
         return true
     }
 
@@ -38,4 +33,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor(red: 233/255, green: 79/255, blue: 53/255, alpha: 1)], for: .selected)
     }
 }
-

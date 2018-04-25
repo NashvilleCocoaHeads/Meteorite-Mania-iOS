@@ -19,8 +19,12 @@ class MeteoriteListViewController: UIViewController, UITableViewDataSource {
         
         super.viewDidLoad()
         
+        DispatchQueue(label: "ImportQueue").async {
+            MeteoritesCoreDataStore.deleteAllMeteorites()
+            MeteoritesCoreDataStore.importNASAMeteoritesCSV(csvFileName: "Meteorite_Landings")
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: .DataUpdated, object: nil)
-        updateData()
     }
     
     @objc func updateData() {

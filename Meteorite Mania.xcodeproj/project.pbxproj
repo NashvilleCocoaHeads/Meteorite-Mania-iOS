@@ -21,6 +21,9 @@
 		1E2BDE1120884912007836B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2BDE0F20884912007836B4 /* LaunchScreen.storyboard */; };
 		1E2BDE1C20884913007836B4 /* Meteorite_ManiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2BDE1B20884913007836B4 /* Meteorite_ManiaTests.swift */; };
 		1E2BDE2720884913007836B4 /* Meteorite_ManiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2BDE2620884913007836B4 /* Meteorite_ManiaUITests.swift */; };
+		1E5B2A0C209004B600E1CA78 /* GradientLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5B2A0B209004B600E1CA78 /* GradientLineGraphView.swift */; };
+		1E5B2A0E2090067D00E1CA78 /* GraphDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5B2A0D2090067D00E1CA78 /* GraphDataModel.swift */; };
+		1E5B2A10209016A900E1CA78 /* GradientLineGraphViewIBDesignableRig.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5B2A0F209016A900E1CA78 /* GradientLineGraphViewIBDesignableRig.xib */; };
 		1E5E8763208BE89900956FC8 /* Meteorite_Mania.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E2BDE0A20884910007836B4 /* Meteorite_Mania.xcdatamodeld */; };
 		1E5E8764208BE89900956FC8 /* Meteorite_Mania.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E2BDE0A20884910007836B4 /* Meteorite_Mania.xcdatamodeld */; };
 		1EBBC732208C3C760007B90E /* Meteorite_Landings_First_1000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */; };
@@ -28,6 +31,8 @@
 		1EBBC734208C3C760007B90E /* Meteorite_Landings_First_1000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */; };
 		1EBBC737208C5F2E0007B90E /* MeteoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBBC736208C5F2E0007B90E /* MeteoriteTableViewCell.swift */; };
 		1EBBC739208D39100007B90E /* MeteoriteMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBBC738208D39100007B90E /* MeteoriteMapViewController.swift */; };
+		1EE9A5BB208FDC840081ED8F /* MeteoriteGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9A5BA208FDC840081ED8F /* MeteoriteGraphsViewController.swift */; };
+		1EE9A5BD208FDCF60081ED8F /* GraphCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9A5BC208FDCF60081ED8F /* GraphCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +69,14 @@
 		1E2BDE2220884913007836B4 /* Meteorite ManiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meteorite ManiaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E2BDE2620884913007836B4 /* Meteorite_ManiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite_ManiaUITests.swift; sourceTree = "<group>"; };
 		1E2BDE2820884913007836B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E5B2A0B209004B600E1CA78 /* GradientLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLineGraphView.swift; sourceTree = "<group>"; };
+		1E5B2A0D2090067D00E1CA78 /* GraphDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDataModel.swift; sourceTree = "<group>"; };
+		1E5B2A0F209016A900E1CA78 /* GradientLineGraphViewIBDesignableRig.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradientLineGraphViewIBDesignableRig.xib; sourceTree = "<group>"; };
 		1EBBC731208C3C760007B90E /* Meteorite_Landings_First_1000.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Meteorite_Landings_First_1000.csv; sourceTree = "<group>"; };
 		1EBBC736208C5F2E0007B90E /* MeteoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteTableViewCell.swift; sourceTree = "<group>"; };
 		1EBBC738208D39100007B90E /* MeteoriteMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteMapViewController.swift; sourceTree = "<group>"; };
+		1EE9A5BA208FDC840081ED8F /* MeteoriteGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteGraphsViewController.swift; sourceTree = "<group>"; };
+		1EE9A5BC208FDCF60081ED8F /* GraphCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 			children = (
 				1E2BDE0520884910007836B4 /* MeteoriteListViewController.swift */,
 				1EBBC738208D39100007B90E /* MeteoriteMapViewController.swift */,
+				1EE9A5BA208FDC840081ED8F /* MeteoriteGraphsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				1E2BDE0A20884910007836B4 /* Meteorite_Mania.xcdatamodeld */,
+				1E5B2A0D2090067D00E1CA78 /* GraphDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				1EBBC736208C5F2E0007B90E /* MeteoriteTableViewCell.swift */,
+				1EE9A5BC208FDCF60081ED8F /* GraphCollectionViewCell.swift */,
+				1E5B2A0B209004B600E1CA78 /* GradientLineGraphView.swift */,
+				1E5B2A0F209016A900E1CA78 /* GradientLineGraphViewIBDesignableRig.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +313,7 @@
 				1E2BDE1120884912007836B4 /* LaunchScreen.storyboard in Resources */,
 				1EBBC732208C3C760007B90E /* Meteorite_Landings_First_1000.csv in Resources */,
 				1E0EEF10208BB33300A38814 /* Meteorite_Landings.csv in Resources */,
+				1E5B2A10209016A900E1CA78 /* GradientLineGraphViewIBDesignableRig.xib in Resources */,
 				1E2BDE0E20884912007836B4 /* Assets.xcassets in Resources */,
 				1E2BDE0920884910007836B4 /* Main.storyboard in Resources */,
 			);
@@ -328,7 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5B2A0E2090067D00E1CA78 /* GraphDataModel.swift in Sources */,
 				1E2BDE0620884910007836B4 /* MeteoriteListViewController.swift in Sources */,
+				1EE9A5BD208FDCF60081ED8F /* GraphCollectionViewCell.swift in Sources */,
+				1E5B2A0C209004B600E1CA78 /* GradientLineGraphView.swift in Sources */,
+				1EE9A5BB208FDC840081ED8F /* MeteoriteGraphsViewController.swift in Sources */,
 				1E0EEF20208BBE8700A38814 /* MeteoritesCoreDataStore.swift in Sources */,
 				1E2BDE0C20884910007836B4 /* Meteorite_Mania.xcdatamodeld in Sources */,
 				1EBBC737208C5F2E0007B90E /* MeteoriteTableViewCell.swift in Sources */,
